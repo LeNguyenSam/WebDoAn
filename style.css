@@ -58,6 +58,7 @@ img {
     width: 100%;
 }
 
+/* can le hai ben */
 .section-content {
     margin:  auto;
     padding: 0 20px;
@@ -66,7 +67,7 @@ img {
 
 /* navbar styling */
 header {
-    position: fixed;
+    position: fixed;  /* có thể dùng sticky thay cho fixed để ko ảnh hưởng tới thẻ main */
     width: 100%;
     z-index: 5;
     background: var(--primary-color);
@@ -101,4 +102,31 @@ header .navbar {
 .navbar .nav-menu .nav-link:hover {
     color: var(--primary-color);
     background: var(--secondary-color);
+}
+
+.hero-section {
+    min-height: 100vh;
+    background: var(--primary-color);
+}
+
+.hero-section .section-content {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--white-color);
+    justify-content: space-between;
+    padding-top: 90px;   /*tránh header đè */
+}
+
+.hero-section .hero-details .title {
+    font-size: var(--font-size-xxl);
+    color: #0a5d5d; 
+    font-family: "Miniver",sans-serif;
+}
+
+.hero-section .hero-details .subtitle {
+    margin-top: 8px;
+    max-width: 70%;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
 }
