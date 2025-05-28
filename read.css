@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #1a2526;
+    color: white;
+}
+
+/* Thanh điều hướng */
+.nav {
+    background-color: #0d1a26;
+    padding: 1rem 2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo img {
+    height: 4rem;
+    max-width: 100%;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.nav-left a {
+    color: white;
+    text-decoration: none;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+.nav-left a:hover {
+    color: #00aaff;
+}
+
+/* Dropdown thể loại */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    color: white;
+    text-decoration: none;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+}
+
+.dropdown-toggle:hover {
+    color: #00aaff;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #2e3b4e;
+    min-width: 150px;
+    border-radius: 5px;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.8rem;
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+}
+
+.dropdown-menu a:hover {
+    background-color: #00aaff;
+    color: white;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown:hover .dropdown-toggle {
+    color: #00aaff;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.nav-right input {
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    border: none;
+    background-color: #2e3b4e;
+    color: white;
+    width: clamp(120px, 30vw, 200px);
+}
+
+.nav-right button {
+    padding: 0.5rem 1.5rem;
+    border-radius: 15px;
+    border: none;
+    background-color: #00aaff;
+    color: white;
+    cursor: pointer;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+}
+
+.nav-right button:hover {
+    background-color: #0088cc;
+}
+
+/* Carousel */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 20%; /* Adjusted to fit 5 items visible */
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: clamp(200px, 50vw, 400px);
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.carousel-item .title {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.carousel .prev, .carousel .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    cursor: pointer;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+
+.carousel .prev {
+    left: 1rem;
+}
+
+.carousel .next {
+    right: 1rem;
+}
+
+/* Chấm phía dưới thanh slide */
+.carousel-indicators {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.carousel-indicators .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #888;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.carousel-indicators .dot.active {
+    background-color: #00aaff;
+}
+
+/* Phần đề xuất */
+.recommendations {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.recommendations h2 {
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
+    margin-bottom: 1rem;
+}
+
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 25vw, 200px), 1fr));
+    gap: 1rem;
+}
+
+.recommendation-item {
+    position: relative;
+}
+
+.recommendation-item img {
+    width: 100%;
+    height: clamp(120px, 20vw, 150px);
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.recommendation-item .title {
+    position: absolute;
+    bottom: 0.8rem;
+    left: 0.8rem;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.recommendation-item .hot {
+    position: absolute;
+    top: 0.8rem;
+    left: 0.8rem;
+    background-color: red;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .nav-left, .nav-right {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-right input {
+        width: 100%;
+        max-width: none;
+    }
+
+    .carousel-item img {
+        height: clamp(150px, 40vw, 250px);
+    }
+
+    .carousel-item .title {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+    }
+
+    .carousel-indicators .dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .recommendations-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-logo img {
+        height: 3rem;
+    }
+
+    .nav-left a, .dropdown-toggle {
+        font-size: clamp(0.8rem, 2.2vw, 0.9rem);
+    }
+
+    .nav-right button {
+        padding: 0.4rem 1rem;
+        font-size: clamp(0.75rem, 2vw, 0.85rem);
+    }
+
+    .carousel .prev, .carousel .next {
+        padding: 0.5rem;
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+    }
+
+    .carousel-indicators .dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .recommendation-item img {
+        height: clamp(100px, 25vw, 120px);
+    }
+
+    .recommendation-item .title {
+        font-size: clamp(0.8rem, 2.2vw, 0.9rem);
+    }
+}
