@@ -1,5 +1,6 @@
 /* import gg font */
 @import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -7,235 +8,343 @@
     font-family: "Poppins", sans-serif;
 }
 
-/* tao cac bien gia tri mau khac nhau de tien thay doi */
-:root {
-  /* Colors */
-  --white-color: #fff;
-  --dark-color: #252525;
-  --primary-color:  linear-gradient(90deg, rgb(223, 225, 94) 0%, rgb(49, 212, 180) 56%, rgb(227, 236, 138) 100%);
-  --secondary-color: #39efce;
-  --light-pink-color: #faf4f5;
-  --medium-gray-color: #ccc;
-
-  /* Font size */
-  --font-size-s: 0.9rem;
-  --font-size-n: 1rem;
-  --font-size-m: 1.12rem;
-  --font-size-l: 1.5rem;
-  --font-size-xl: 2rem;
-  --font-size-xxl: 2.3rem;
-
-  /* Font weight */
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-
-  /* Border radius */
-  --border-radius-s: 8px;
-  --border-radius-m: 30px;
-  --border-radius-circle: 50%;
-
-  /* Site max width */
-  --site-max-width: 1500px;
+body {
+    background-color: #1a2526;
+    color: white;
 }
 
-ul {
-    list-style: none;
+/* Thanh điều hướng */
+.nav {
+    background-color: #0d1a26;
+    padding: 1rem 2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-a {
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo img {
+    height: 4rem;
+    max-width: 100%;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.nav-left a {
+    color: white;
     text-decoration: none;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
 }
 
-button {
+.nav-left a:hover {
+    color: #00aaff;
+}
+
+/* Dropdown thể loại */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    color: white;
+    text-decoration: none;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
     cursor: pointer;
-    border: none;
-    background: none;
+    padding: 0.5rem 1rem;
 }
 
-img {
-    width: 100%;
+.dropdown-toggle:hover {
+    color: #00aaff;
 }
 
-/* can le hai ben */
-.section-content {
-    margin:  auto;
-    padding: 0 20px;
-    max-width: var(--site-max-width);
-}
-
-/* navbar styling */
-header {
-    position: fixed;  /* có thể dùng sticky thay cho fixed để ko ảnh hưởng tới thẻ main */
-    width: 100%;
-    z-index: 5;
-    background: var(--primary-color);
-}
-
-header .navbar {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    justify-content: space-between;
-}
-
-.navbar .nav-logo .logo-text {
-    color: var(--white-color);
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-semibold);
-}
-
-.navbar .nav-menu {
-    display: flex;
-    gap: 10px;
-}
-
-.navbar .nav-menu .nav-link {
-    padding: 10px 18px;
-    font-size: var(--font-size-m);
-    border-radius: var(--border-radius-m);
-    color: var(--white-color);
-    transition: 0.3s ease;
-}
-
-.navbar .nav-menu .nav-link:hover {
-    color: var(--primary-color);
-    background: var(--secondary-color);
-}
-
-/* an cac nut trong giao dien destop */
-.navbar :where(#menu-close-button ,#menu-open-button) {
+.dropdown-menu {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #2e3b4e;
+    min-width: 150px;
+    border-radius: 5px;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.hero-section {
-    min-height: 100vh;
-    background: var(--primary-color);
+.dropdown-menu a {
+    display: block;
+    padding: 0.8rem;
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
 }
 
-.hero-section .section-content {
+.dropdown-menu a:hover {
+    background-color: #00aaff;
+    color: white;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown:hover .dropdown-toggle {
+    color: #00aaff;
+}
+
+.nav-right {
     display: flex;
     align-items: center;
-    min-height: 100vh;
-    color: var(--white-color);
-    justify-content: space-between;
-    padding-top: 90px;   /*tránh header đè */
+    gap: 0.8rem;
+    flex-wrap: wrap;
 }
 
-.hero-section .hero-details .title {
-    font-size: var(--font-size-xxl);
-    color: #0a5d5d; 
-    font-family: "Miniver",sans-serif;
+.nav-right input {
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    border: none;
+    background-color: #2e3b4e;
+    color: white;
+    width: clamp(120px, 30vw, 200px);
 }
 
-.hero-section .hero-details .subtitle {
-    margin-top: 8px;
-    max-width: 70%;
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-semibold);
+.nav-right button {
+    padding: 0.5rem 1.5rem;
+    border-radius: 15px;
+    border: none;
+    background-color: #00aaff;
+    color: white;
+    cursor: pointer;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
 }
 
-.hero-section .hero-details .description {
-    max-width: 70%;
-    margin: 24px 0 40px;
-    font-size: var(--font-size-m);
+.nav-right button:hover {
+    background-color: #0088cc;
+}
+
+/* Carousel */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 20%; /* Adjusted to fit 5 items visible */
+    position: relative;
+    overflow: hidden;
+    padding-left: 20px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: clamp(200px, 50vw, 400px);
+    object-fit: cover;
+    display: block;
+    border-radius: 5px;
+    
+    
+}
+.carousel-item .overlay {   
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 0;
+    height: 50%; /* điều chỉnh vùng làm tối */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    pointer-events: none;
+    border-radius: 5px;
 }
 
 
-.hero-section .hero-details .button {
-    padding: 10px 26px;
-    border: 1px solid transparent;
-    color: var(--primary-color);
-    border-radius: var(--border-radius-m);
-    background: transparent;
-    font-weight: var(--font-weight-medium);
-    transition: 0.3 ease;
-    border-color: #0a5d5d;
-    margin-right: 10px;
+.carousel-item .title {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 20px;
+    right: 0;
+    text-align: center;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: normal ;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 2;
 }
 
-.hero-section .hero-details .button:hover {
-    color: var(--primary-color);
-    background: var(--secondary-color);
+.carousel .prev, .carousel .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    cursor: pointer;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
 }
 
-.hero-section .logo-image-wrapper {
-    max-width: 500px;
-    margin-right: 30px;
+.carousel .prev {
+    left: 1rem;
+    position: absolute;
+    left: 20px;
 }
 
-@media screen and (max-width: 700px) {
+.carousel .next {
+    right: 1rem;
+    position: absolute;
+    right: -1px;
+}
 
-    :root {
-        --font-size-m: 1rem;
-        --font-size-l: 1.3rem;
-        --font-size-xl: 1.5rem;
-        --font-size-xxl: 1.8rem;
-    }
+/* Chấm phía dưới thanh slide */
+.carousel-indicators {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
 
-    body.show-mobile-menu header::before {
-        content: "";
-        position: fixed;
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        backdrop-filter: blur(5px);
-        background: rgba(0, 0, 0, 0.2);
-    }
+.carousel-indicators .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #888;
+    border-radius: 50%;
+    cursor: pointer;
+}
 
-    .navbar :where(#menu-close-button ,#menu-open-button) {
-        display: block;
-        font-size: var(--font-size-l);
-    }
+.carousel-indicators .dot.active {
+    background-color: #00aaff;
+}
 
-    .navbar #menu-close-button {
-        position: absolute;
-        right: 30px;
-        top: 30px;
-    }
+/* Phần đề xuất */
+.recommendations {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
 
-    .navbar #menu-open-button {
-        color: var(--dark-color);
-    }
+.recommendations h2 {
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
+    margin-bottom: 1rem;
+}
 
-    .navbar .nav-menu {
-        display: block;
-        position: fixed;
-        left: -250px;
-        top: 0;
-        width: 250px;
-        height: 100%;
-        display: flex;
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 25vw, 200px), 1fr));
+    gap: 1rem;
+}
+
+.recommendation-item {
+    position: relative;
+}
+
+.recommendation-item img {
+    width: 100%;
+    height: clamp(120px, 20vw, 150px);
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.recommendation-item .title {
+    position: absolute;
+    bottom: 0.8rem;
+    left: 0.8rem;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.recommendation-item .hot {
+    position: absolute;
+    top: 0.8rem;
+    left: 0.8rem;
+    background-color: red;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav {
         flex-direction: column;
-        align-items: center;
-        padding-top: 100px;
-        background: var(--white-color);    
-        transition: left 0.2s ease;
+        align-items: flex-start;
+        gap: 1rem;
     }
 
-    body.show-mobile-menu .navbar .nav-menu {
-        left: 0;
-    }
-
-    .navbar .nav-menu .nav-link {
-        color: var(--dark-color);
-        display: block;
-        margin-top: 17px;
-        font-size: var(--font-size-l);
-    }
-
-    .hero-section .section-content {
-        gap: 50px;
-        text-align: center;
-        padding: 30px 20px 20px;
-        flex-direction: column-reverse;
+    .nav-left, .nav-right {
+        width: 100%;
         justify-content: center;
     }
 
-    .hero-section .hero-image-wrapper {
-        max-width: 270px;
-        margin-right: 0;
+    .nav-right input {
+        width: 100%;
+        max-width: none;
+    }
+
+    .carousel-item img {
+        height: clamp(150px, 40vw, 250px);
+    }
+
+    .carousel-item .title {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+    }
+
+    .carousel-indicators .dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .recommendations-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-logo img {
+        height: 3rem;
+    }
+
+    .nav-left a, .dropdown-toggle {
+        font-size: clamp(0.8rem, 2.2vw, 0.9rem);
+    }
+
+    .nav-right button {
+        padding: 0.4rem 1rem;
+        font-size: clamp(0.75rem, 2vw, 0.85rem);
+    }
+
+    .carousel .prev, .carousel .next {
+        padding: 0.5rem;
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+    }
+
+    .carousel-indicators .dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .recommendation-item img {
+        height: clamp(100px, 25vw, 120px);
+    }
+
+    .recommendation-item .title {
+        font-size: clamp(0.8rem, 2.2vw, 0.9rem);
     }
 }

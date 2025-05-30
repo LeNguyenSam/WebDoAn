@@ -1,68 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ThichTruyenChu Website</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>ThichTruyenChu</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header / Navbar -->
-    <header>
-        <nav class="navbar section-content">
-            <a href="#" class="nav-logo">
-                <h2 class="logo-text">ThichTruyenChu</h2>
-            </a>
-            <ul class="nav-menu">
-                <button id="menu-close-button" class="fas fa-times"></button>
-                <li>
-                    <a href="#" class="nav-link">Menu</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Menu</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Contact</a>
-                </li>
-            </ul>
-
-            <button id="menu-open-button" class="fas fa-bars"></button>
-
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero-section">
-            <div class="section-content">
-                <div class="hero-details">
-                    <h2 class="title">Thich Truyen Chu</h2>
-                    <h3 class="subtitle">Nơi thỏa mãn đam mê wibu của bạn</h3>
-                    <p class="description">Chào mừng đến với trang web của chúng tôi. Hãy tận hưởng hàng ngàn đầu light novel nổi tiếng tại trang web này .Enjoy guy! </p>
-
-                    <div class="buttons">
-                        <a href="#" class="button read-now">Đọc Ngay</a>
-                        <a href="#" class="button React-us">Phản Hồi</a>
-                    </div>
-                </div>
-                <div class="logo-image-wrapper">
-                    <div class="square">
-                        <img src="image/Lg.png" alt="Logo" class="logo-image">
-                    </div>
+    <!-- Thanh điều hướng -->
+    <nav class="nav">
+        <div class="nav-logo">
+            <img src="image/logo2.2.png" alt="Logo">
+        </div>
+        <div class="nav-left">
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle">THỂ LOẠI</a>
+                <div class="dropdown-menu">
+                    <a href="#">Tình Cảm</a>
+                    <a href="#">Kinh Dị</a>
+                    <a href="#">Hài Hước</a>
+                    <a href="#">Võ Hiệp</a>
                 </div>
             </div>
-        </section>
-    </main>
+            <a href="#">TRUYỆN MỚI</a>
+            <a href="#">BXH</a>
+            <a href="#">ĐĂNG TRUYỆN</a>
+            <a href="#">DONATE/VIP</a>
+        </div>
+        <div class="nav-right">
+            <input type="text" placeholder="Tìm truyện...">
+            <button>ĐĂNG NHẬP</button>
+            <button>ĐĂNG KÝ</button>
+        </div>
+    </nav>
 
-    <script src="script.js"></script>
+    <!-- Carousel -->
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img src="image/novel1.jpg" alt="Ai Bao Han Tu Tien">
+                <div class="overlay"></div>
+                <div class="title">Ai Bảo Hắn Tu Tiên</div>
+            </div>
+            <div class="carousel-item">
+                <img src="image/novel2.jpg" alt="Ta Tai Trong Nui">
+                <div class="overlay"></div>
+                <div class="title">Ta Tại Trong Núi Lập Tức Thành Tiên</div>
+            </div>
+            <div class="carousel-item">
+                <img src="image/novel3.jpg" alt="Mu Loa Troc Dao Nhan">
+                <div class="overlay"></div>
+                <div class="title">Mù Loà Tróc Đao Nhân</div>
+            </div>
+            <div class="carousel-item">
+                <img src="image/novel4.jpg" alt="Khong Co Tien Tu Cai">
+                <div class="overlay"></div>
+                <div class="title">Không Có Tiền Tu Cái Gì Tiên?</div>
+            </div>
+        </div>
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+        <div class="carousel-indicators">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+    </div>
+
+    <!-- Phần đề xuất -->
+    <div class="recommendations">
+        <h2>ĐỀ CỬ</h2>
+        <div class="recommendations-grid">
+            <div class="recommendation-item">
+                <img src="https://via.placeholder.com/200x150?text=Recommendation+1" alt="Recommendation 1">
+                <div class="hot">HOT</div>
+                <div class="title">Recommendation 1</div>
+            </div>
+            <div class="recommendation-item">
+                <img src="https://via.placeholder.com/200x150?text=Recommendation+2" alt="Recommendation 2">
+                <div class="hot">HOT</div>
+                <div class="title">Recommendation 2</div>
+            </div>
+            <div class="recommendation-item">
+                <img src="https://via.placeholder.com/200x150?text=Recommendation+3" alt="Recommendation 3">
+                <div class="hot">HOT</div>
+                <div class="title">Recommendation 3</div>
+            </div>
+            <div class="recommendation-item">
+                <img src="https://via.placeholder.com/200x150?text=Recommendation+4" alt="Recommendation 4">
+                <div class="hot">HOT</div>
+                <div class="title">Recommendation 4</div>
+            </div>
+            <div class="recommendation-item">
+                <img src="https://via.placeholder.com/200x150?text=Recommendation+5" alt="Recommendation 5">
+                <div class="hot">HOT</div>
+                <div class="title">Recommendation 5</div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script src="script"></script>
 </body>
 </html>
