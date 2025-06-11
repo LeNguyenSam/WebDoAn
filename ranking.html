@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Đọc Truyện</title>
+    <title>Xếp Hạng Truyện</title>
     <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ranking.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -23,7 +23,6 @@
             <a href="categories.html">Thể Loại</a>
             <a href="new.html">Truyện Mới</a>
             <a href="ranking.html">Xếp Hạng</a>
-            <a href="upload.html">Đăng Truyện</a>
             <div class="dropdown">
                 <span class="dropdown-toggle">Tác Giả <i class="fas fa-chevron-down"></i></span>
                 <div class="dropdown-menu">
@@ -44,62 +43,44 @@
 
     <!-- Main Content -->
     <main class="container">
-        <!-- Featured Novels Carousel -->
-        <section class="featured-novels">
-            <div class="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="./image/anh-anime-cuc-dep.jpg" alt="Truyện 1">
-                        <div class="carousel-caption">
-                            <h3>Tokyo Ghoul</h3>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./image/jujutsu-kaisen-rotated.jpg" alt="Truyện 2">
-                        <div class="carousel-caption">
-                            <h3>Jujutsu Kaisen</h3>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./image/hinh-nen-anime-3.jpg" alt="Truyện 3">
-                        <div class="carousel-caption">
-                            <h3>Tháng 4 Là Lời Nói Dối Của Em</h3>
-                        </div>
-                    </div>
+        <div class="ranking-container">
+            <h1>Bảng Xếp Hạng Truyện</h1>
+            
+            <!-- Ranking Filters -->
+            <div class="ranking-filters">
+                <div class="filter-group">
+                    <label>Thời gian:</label>
+                    <select id="timeFilter">
+                        <option value="day">Hôm nay</option>
+                        <option value="week">Tuần này</option>
+                        <option value="month">Tháng này</option>
+                        <option value="all">Tất cả</option>
+                    </select>
                 </div>
-                <button class="carousel-control prev">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="carousel-control next">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-                <div class="carousel-indicators">
-                    <span class="active"></span>
-                    <span></span>
-                    <span></span>
+                <div class="filter-group">
+                    <label>Thể loại:</label>
+                    <select id="categoryFilter">
+                        <option value="all">Tất cả</option>
+                        <option value="action">Hành động</option>
+                        <option value="romance">Tình cảm</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="comedy">Hài hước</option>
+                    </select>
                 </div>
             </div>
-        </section>
 
-        <!-- Recommended Novels -->
-        <section class="recommended-novels">
-            <div class="section-header">
-                <h2>Truyện Đề Cử</h2>
+            <!-- Ranking Tabs -->
+            <div class="ranking-tabs">
+                <button class="tab-btn active" data-tab="views">Lượt xem</button>
+                <button class="tab-btn" data-tab="rating">Đánh giá</button>
+                <button class="tab-btn" data-tab="follows">Theo dõi</button>
             </div>
-            <div class="novels-grid">
-                <!-- Novel items will be added dynamically -->
-            </div>
-        </section>
 
-        <!-- Hot Novels -->
-        <section class="hot-novels">
-            <div class="section-header">
-                <h2>Truyện Hot</h2>
+            <!-- Ranking List -->
+            <div class="ranking-list">
+                <!-- Will be populated by JavaScript -->
             </div>
-            <div class="novels-grid">
-                <!-- Novel items will be added dynamically -->
-            </div>
-        </section>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -132,5 +113,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="ranking.js"></script>
 </body>
-</html>
+</html> 
